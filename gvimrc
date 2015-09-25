@@ -4,7 +4,7 @@ syntax on
 execute pathogen#infect()
 
 " Colorscheme
-colorscheme slate
+colorscheme autumnleaf
 
 " Tab preferences
 set tabstop=4
@@ -34,10 +34,17 @@ set listchars=tab:\▸\ ,trail:𐤟
 " Map NerdTree to F2
 map <F2> :NERDTreeToggle<CR>
 
-if has("autocmd")
+" GUI options
+set guioptions-=m "remove menubar
+set guioptions-=T "remove toolbar
+set guioptions-=r "remove right-hand scrollbar
+set guioptions-=L "remove left-hand scrollbar
+
+if has('autocmd')
     " Enable file type detection
     filetype on
     " Customization based on file type
-    autocmd FileType html setlocal expandtab ts=2 sts=2 sw=2
-    autocmd FileType css setlocal expandtab ts=2 sts=2 sw=2
+    autocmd FileType html setlocal ts=2 sts=2 sw=2
+    autocmd FileType css setlocal ts=2 sts=2 sw=2
 endif
+
